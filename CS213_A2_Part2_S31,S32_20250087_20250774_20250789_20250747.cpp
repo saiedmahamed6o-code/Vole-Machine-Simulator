@@ -1,3 +1,7 @@
+#include <iostream>
+#include <vector>
+#include "Machine.h"
+
 int main() {
     Machine myMachine;
 

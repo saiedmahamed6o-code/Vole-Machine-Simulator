@@ -5,9 +5,7 @@
 #include <iomanip>
 #include <sstream>
 
-#include "Memory.h"
-#include "CPUComponents.h"
-#include "Instruction.h"
+
 
 class Machine {
 private:
@@ -57,4 +55,34 @@ public:
     Memory(int size = 256);
     int read(int address) const;
     void write(int address, int value);
+};
+
+#include <vector>
+
+enum machineState {
+    READY,
+    RUNNING,
+    HALTED
+};
+
+class RegisterFile {
+private:
+    std::vector<int> registers;
+
+public:
+    RegisterFile(int size = 16);
+    int getIndex(int index) const;
+    void setIndex(int index, int value);
+};
+
+class ProgramCounter {
+private:
+    int pc;
+
+public:
+    ProgramCounter(int startAddress = 0);
+    int get() const;
+    void set(int address);
+    void increment();
+    void reset();
 };
