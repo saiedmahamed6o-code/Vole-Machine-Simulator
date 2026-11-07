@@ -57,6 +57,8 @@ public:
     void write(int address, int value);
 };
 
+
+
 #include <vector>
 
 enum machineState {

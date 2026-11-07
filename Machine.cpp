@@ -82,7 +82,7 @@ Instruction Instruction::decode(std::string instructionCode) {
 
 int Instruction::getOpcode() const { return opCode; }
 int Instruction::getOperand1() const { return R; }
-int getOperand2() const { return v1; } // (تأكد من إرجاع v1 داخل السكوب)
+int getOperand2() const { return v1; } // (تأكد من الإرجاع v1 داخل السكوب)
 int Instruction::getOperand2() const { return v1; }
 int Instruction::getOperand3() const { return v2; }
 
@@ -176,8 +176,6 @@ void Memory::write(int address, int value) {
         cells[address] = value;
     }
 }
-
-
 
 RegisterFile::RegisterFile(int size) {
     registers.resize(size, 0);
