@@ -1,7 +1,4 @@
 #include "Machine.h"
-#include "Instruction.h"
-#include "Memory.h"
-#include "CPUComponents.h"
 
 Machine::Machine() : state(READY) {}
 

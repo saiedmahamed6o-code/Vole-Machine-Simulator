@@ -1,7 +1,9 @@
-#pragma once
+#ifndef MACHINE_H
+#define MACHINE_H
+
+#include <iostream>
 #include <vector>
 #include <string>
-#include <iostream>
 #include <iomanip>
 #include <sstream>
 
@@ -86,3 +88,5 @@ public:
     void increment();
     void reset();
 };
+
+#endif
