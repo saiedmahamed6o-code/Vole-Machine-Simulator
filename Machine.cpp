@@ -176,3 +176,25 @@ void Memory::write(int address, int value) {
         cells[address] = value;
     }
 }
+RegisterFile::RegisterFile(int size) {
+    registers.resize(size, 0);
+}
+
+int RegisterFile::getIndex(int index) const {
+    if (index >= 0 && index < (int)registers.size()) {
+        return registers[index];
+    }
+    return 0;
+}
+
+void RegisterFile::setIndex(int index, int value) {
+    if (index >= 0 && index < (int)registers.size()) {
+        registers[index] = value;
+    }
+}
+
+ProgramCounter::ProgramCounter(int startAddress) : pc(startAddress) {}
+int ProgramCounter::get() const { return pc; }
+void ProgramCounter::set(int address) { pc = address; }
+void ProgramCounter::increment() { pc += 2; }
+void ProgramCounter::reset() { pc = 0; }

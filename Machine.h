@@ -57,3 +57,32 @@ public:
     void write(int address, int value);
 };
 
+#include <vector>
+
+enum machineState {
+    READY,
+    RUNNING,
+    HALTED
+};
+
+class RegisterFile {
+private:
+    std::vector<int> registers;
+
+public:
+    RegisterFile(int size = 16);
+    int getIndex(int index) const;
+    void setIndex(int index, int value);
+};
+
+class ProgramCounter {
+private:
+    int pc;
+
+public:
+    ProgramCounter(int startAddress = 0);
+    int get() const;
+    void set(int address);
+    void increment();
+    void reset();
+};
