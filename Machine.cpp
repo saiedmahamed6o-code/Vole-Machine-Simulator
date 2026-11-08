@@ -79,7 +79,6 @@ Instruction Instruction::decode(std::string instructionCode) {
 
 int Instruction::getOpcode() const { return opCode; }
 int Instruction::getOperand1() const { return R; }
-int getOperand2() const { return v1; } // (تأكد من الإرجاع v1 داخل السكوب)
 int Instruction::getOperand2() const { return v1; }
 int Instruction::getOperand3() const { return v2; }
 
